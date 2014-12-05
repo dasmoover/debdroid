@@ -1,7 +1,8 @@
 Debdroid V4
 ========
 
-##Linux Chroot Daemon for Android Devices - Supports Lollipop 5.0
+##Linux Chroot Daemon for Android Devices 
+##Supports Lollipop 5.0
 
 
 Debdroid is a tool for the Android platform which runs a full Linux distribution as a daemon. 
