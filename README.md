@@ -1,15 +1,13 @@
 Debdroid V4
 ========
 
-##Linux Chroot Daemon for Android Devices 
-##Supports Lollipop 5.0
-
-
+##Linux Chroot Daemon for Android 
+##Supports Android 2.3 through 5.0
+#Overview:
 Debdroid is a tool for the Android platform which runs a full Linux distribution as a daemon. 
 Any rooted device can run fully supported ARM distributions such as Kali, Debian, Ubuntu, etc.
 
-Debdroid has been successfully tested on Android 2.3 and up to 5.0. Confirmed working on my N9.
-
+Debdroid has been successfully tested on Android 2.3 and up to 5.0. Confirmed working on N9 5.0.
 
 #How To Install:
 ##1. Download the git repo
