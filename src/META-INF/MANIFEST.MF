@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (JRummy Apps Inc.)
+
+Name: system/etc/init.d/09debdroid
+SHA1-Digest: w82mKFi0xehTjIL4A+8FSZDu5GU=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: ygSP0NefcGv5SErY1AZLNH7HpZM=
+
+Name: system/bin/debdroid
+SHA1-Digest: 9R0csMBV4X59Ndpp2ZoQhszCh54=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: 9MucLHDZeJ5g8TZ7F24um1An6So=
+
+Name: system/bin/debshell
+SHA1-Digest: +E01TYL3AlFxqdnpjnpPxU9Dcyk=
+
+Name: system/bin/debkill
+SHA1-Digest: 9e5PByFRo9S9Yy3IRhvpPk6iM9o=
+

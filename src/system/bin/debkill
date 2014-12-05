@@ -1,0 +1,12 @@
+export mnt=/data/local/debdroid
+umount $mnt/dev/pts
+umount $mnt/dev
+umount $mnt/proc 
+umount $mnt/sys 
+umount $mnt/mnt/share/
+umount $mnt/mnt/android/
+umount $mnt
+echo "Exiting $chostname chroot"
+echo "Filesystem unmounted"
+losetup -d /dev/block/loop$loopno
+

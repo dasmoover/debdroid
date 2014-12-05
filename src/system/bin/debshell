@@ -1,0 +1,23 @@
+source /etc/debdroid.conf
+
+#required for mount -o to function
+#ifconfig eth0 promisc #must be initialized or will crash when doing it on debian
+
+export kit=$mnt
+export bin=/system/bin
+
+export mnt=$mnt
+export PATH=$bin:/usr/bin:/usr/sbin:/bin:$PATH
+export TERM=linux
+export USER=root
+export HOME=/root
+echo "$chostname" > $mnt/etc/hostname
+
+echo "Opening $chostname chroot on loop$loopno"
+chroot $mnt bash -c "$1"   
+#echo "Dropping to $chostname shell"
+#chroot $mnt /bin/bash
+#After exit command is executed clear it all up
+echo
+#echo "Exiting $chostname chroot - System is still running"
+

@@ -1,0 +1,5 @@
+#!/system/bin/sh
+#debdroid sub-system
+
+debdroid &
+echo "excecuted debdroid on $(date +"%d-%m-%Y %r" )" >> /data/daemons.log

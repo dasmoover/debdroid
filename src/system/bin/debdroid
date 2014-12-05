@@ -1,0 +1,87 @@
+#echo revision 9001
+source /etc/debdroid.conf
+init() {
+
+#required for mount -o to function
+#ifconfig wlan0 promisc #must be initialized or will crash when doing it on debian
+#mtdblock012 - olympus 
+#mtdblock3 - supersonic, incredible
+
+export kit=$mnt
+export bin=/system/bin
+
+export mnt=$mnt
+export PATH=$bin:/usr/bin:/usr/sbin:/bin:$PATH
+export TERM=linux
+export USER=root
+export HOME=/root
+}
+
+
+loop() {
+loop="/dev/block/loop$loopno"
+mknod $loop b 7 $loopno 2>> /dev/null
+mkdir /system/linux
+losetup /dev/block/loop$loopno $img
+mount -t ext4 /dev/block/loop$loopno $mnt
+#echo "MOUNTED FS"
+#mkdir /system/linux
+cd $mnt
+mkdir proc sys dev 
+mkdir -p /system/linux/android/
+mkdir -p /system/linux/storage/emulated/0/
+mount -o bind /system /system/linux/android/system
+#mkdir -p /system/linux/android/sdcard
+#mkdir -p /system/linux/android/data
+mount -o bind /sdcard /system/linux/storage/emulated/0/
+mount -o bind /data /system/linux/android/data
+}
+
+sysmount() {
+mount -t proc proc $mnt/proc
+mount -t sysfs sysfs $mnt/sys
+mount -o bind /dev $mnt/dev
+mount -t devpts devpts $mnt/dev/pts
+#mount -o bind $sharedir $mnt/mnt/share 2>> /dev/null
+#echo "$sharedir mounted to /mnt/share"
+echo "Native Filesystem mounted to /android"
+}
+
+networking() {
+sysctl -w net.ipv4.ip_forward=12 >> /dev/null
+#echo "Setting /etc/resolv.conf to DNS $nameserver1 and $nameserver2"
+echo "nameserver $nameserver1" > $mnt/etc/resolv.conf 2>> /dev/null
+echo "nameserver $nameserver2" >> $mnt/etc/resolv.conf 2>> /dev/null
+#echo "Setting localhost on /etc/hosts " 2>> /dev/null
+echo "127.0.0.1 localhost" > $mnt/etc/hosts 2>> /dev/null 
+echo "$chostname" > $mnt/etc/hostname
+}
+
+
+mountrw
+echo "Initializing chroot filesystem"
+init
+loop
+echo
+echo "Mounting proc, sysfs, dev, devpts"
+sysmount
+echo
+echo "Setting up DNS and Networking"
+echo
+networking
+echo "Debdroid deployed succesfully, opening chroot."
+#mount -o bind /system $mnt/mnt/android
+chroot $mnt bash -c "hostname $chostname"
+chroot $mnt /bin/bash
+#After exit command is executed clear it all up
+echo
+
+#umount $mnt/mnt/share
+#umount $mnt/dev/pts
+#umount $mnt/dev
+#umount $mnt/proc 
+#umount $mnt/sys 
+#umount $mnt
+#echo "Exiting chroot"
+#echo "Filesystem unmounted"
+

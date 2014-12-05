@@ -1,0 +1,22 @@
+Signature-Version: 1.0
+Created-By: 1.0 (JRummy Apps Inc.)
+SHA1-Digest-Manifest: mC2kxGle6nXCFOz4eVKZKRH4dq8=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: A1e3bS87qeP0suypQEZd5JkBY8E=
+
+Name: system/etc/init.d/09debdroid
+SHA1-Digest: Rq+WfpAJ1BuyxGD307hjawgw9Fs=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: LhxnyOHT0belfvWhny7w4JpRba0=
+
+Name: system/bin/debdroid
+SHA1-Digest: K4pwS7Efo0uLMgMorEu4vuNI4fw=
+
+Name: system/bin/debshell
+SHA1-Digest: BYPqBaVgwfX82MyI7p85wad9r50=
+
+Name: system/bin/debkill
+SHA1-Digest: smcZ046mzL0dpTK96tWOEi+Wov4=
+
