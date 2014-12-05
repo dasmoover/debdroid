@@ -10,12 +10,12 @@ Any rooted device can run fully supported ARM distributions such as Kali, Debian
 Debdroid has been successfully tested on Android 2.3 and up to 5.0. Confirmed working on N9 5.0.
 
 #How To Install:
-##1. Download the git repo
-##2. Place ARM image at /sdcard/linux.img
-##3. Flash the zip file in twrp
+###1. Download the git repo
+###2. Place ARM image at /sdcard/linux.img
+###3. Flash the zip file in twrp
 
 #How To Use:
-##1. debshell "cmd" - run any command under linux
-##2. debshell "passwd" - change root pass
-##3. debshell "/etc/init.d/ssh restart" - starts ssh
-##4. debshell bash - Gives you full access to a bash chroot
+###1. debshell "cmd" - run any command under linux
+###2. debshell "passwd" - change root pass
+###3. debshell "/etc/init.d/ssh restart" - starts ssh
+###4. debshell bash - full access to a bash chroot
